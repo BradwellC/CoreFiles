@@ -1,0 +1,15 @@
+[user]
+  name = Chris Bradwell
+  email = chris-bradwell@live.co.uk
+
+[core]
+  compression = 9
+  whitespace = error
+  preloadindex = true
+
+[advice]
+  addEmptyPathspec = false
+  pushNonFastForward = false
+  statusHints = false
+[init]
+	defaultBranch = main
