@@ -48,6 +48,8 @@ zinit light-mode for \
   zdharma-continuum/zinit-annex-bin-gem-node \
   zdharma-continuum/zinit-annex-patch-dl 
 
+zinit load atuinsh/atuin
+
 # Snippets From Oh My ZSH
 zinit snippet OMZL::git.zsh              # Git aliases and functions
 zinit snippet OMZL::history.zsh          # Better history management
@@ -143,10 +145,10 @@ alias tl='tmux list-sessions'
 alias ta='tmux attach-session'
 alias ts='tmux kill-server'
 
-# ============== Zinit Settings ===================
-# Shell Integration
+# ============== Shell Settings ===================
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(atuin init zsh)"
 
 # Terminal Config - Oh My Posh
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
