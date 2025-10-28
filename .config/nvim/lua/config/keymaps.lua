@@ -44,5 +44,4 @@ keymap.set("n", "<C-a>", "", { desc = "Select All Content" })
 -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
--- File Explorer
-keymap.set("n", "-", "<cmd>:Oil --float<CR>", { desc = "Open Oil Directory" })
+vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", { desc = "Open Parent Directory in Oil" })

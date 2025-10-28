@@ -6,7 +6,9 @@ return {
 	opts = {
 		indent = { enabled = true },
 		input = { enabled = true },
-		notifier = { enabled = true },
+		notifier = {
+			timeout = 5000,
+		},
 		statuscolumn = { enabled = true },
 	},
 }
