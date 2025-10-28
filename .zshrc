@@ -19,6 +19,8 @@ export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
+# Python Path
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # ============== Zinit Settings ===================
 # Resource Links:

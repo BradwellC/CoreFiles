@@ -1,6 +1,7 @@
-# You can use it to add commands that run after AeroSpace startup.
-# Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+# Run Sketchybar together with AeroSpace
+# sketchbar has a built-in detection of already running process,
+# so it won't be run twice on AeroSpace restart
+after-startup-command = [ 'exec-and-forget borders' ]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -47,10 +48,10 @@ automatically-unhide-macos-hidden-apps = false
 [gaps]
     inner.horizontal = 10
     inner.vertical =   10
-    outer.left =       10
-    outer.bottom =     10
-    outer.top =        10
-    outer.right =      10
+    outer.left =       [{ monitor."built-in" = 15 }, 25]
+    outer.bottom =     [{ monitor."built-in" = 15 }, 25]
+    outer.top =        [{ monitor."built-in" = 20 }, 15]
+    outer.right =      [{ monitor."built-in" = 15 }, 25]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -195,15 +196,11 @@ automatically-unhide-macos-hidden-apps = false
 
 # Workspace B - Browser
 [[on-window-detected]]
-  if.app-id = 'app.zen-browser.zen'
+  if.app-id = 'org.mozilla.firefox'
   run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
   if.app-id = 'com.apple.Safari'
-  run = "move-node-to-workspace B"
-
-[[on-window-detected]]
-  if.app-id = 'com.google.Chrome'
   run = "move-node-to-workspace B"
 
 # Workspace C - Calendar
@@ -258,8 +255,8 @@ automatically-unhide-macos-hidden-apps = false
 
 # Workspae N - Obsidian
 [[on-window-detected]]
-  if.app-id = 'md.obsidian'
-  run = [ 'layout floating', 'move-node-to-workspace N']
+  if.app-id = 'com.apple.Notes'
+  run = 'move-node-to-workspace N'
 
 # Workspace P - Reminders / Todoist
 [[on-window-detected]]
@@ -307,6 +304,11 @@ automatically-unhide-macos-hidden-apps = false
   if.app-id = 'com.blackmagic-design.DaVinciResolve'
   run = 'move-node-to-workspace V'
 
+# Obsidian Workspace - Temp
+[[on-window-detected]]
+  if.app-id = 'md.obsidian'
+  run = 'move-node-to-workspace Y'
+
   # Workspace Z - System
 [[on-window-detected]]
   if.app-id = 'com.bitwarden.desktop'
@@ -348,6 +350,7 @@ automatically-unhide-macos-hidden-apps = false
 [workspace-to-monitor-force-assignment]
 # Left Monitor - Main
   G = 1
+  N = 1
   T = 1
   W = 1
 
